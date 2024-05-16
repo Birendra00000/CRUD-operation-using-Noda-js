@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Perfect Form</title>
+
+    <!-- Use to acess CSS -->
+    <link rel="stylesheet" href="createBlog.css" />
+  </head>
+  <body>
+    <!-- Form Container -->
+    <%- include("components/navbar") %>
+    <div class="form-container">
+      <!-- Form Title -->
+      <h2 class="form-title">Create Blog</h2>
+      <!-- Form Subtitle -->
+
+      <!-- Form Description -->
+      <p class="form-description">
+        This is a description of the form. You can add more details here.
+      </p>
+      <!-- Actual Form with Action Attribute -->
+      <form action="/createblog" method="post">
+        <!-- Form Label and Input Field for Title -->
+        <label for="title" class="form-label">Title:</label>
+        <input
+          type="text"
+          id="title"
+          name="title"
+          class="form-input"
+          required
+        />
+
+        <!-- Form Label and Input Field for Subtitle -->
+        <label for="subtitle" class="form-label">Subtitle:</label>
+        <input
+          type="text"
+          id="subtitle"
+          name="subtitle"
+          class="form-input"
+          required
+        />
+
+        <!-- Form Label and Textarea for Description -->
+        <label for="description" class="form-label">Description:</label>
+        <textarea
+          id="description"
+          name="description"
+          rows="4"
+          class="form-textarea"
+          required
+        ></textarea>
+
+        <!-- Submit Button -->
+        <input type="submit" value="Submit" class="form-submit" />
+      </form>
+    </div>
+  </body>
+</html>

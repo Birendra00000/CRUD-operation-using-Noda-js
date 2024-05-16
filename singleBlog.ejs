@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Blog Post Description</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f0f0f0;
+        margin: 0;
+        padding: 0;
+      }
+
+      .container {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: #fff;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        border-radius: 4px;
+        margin-top: 20px;
+      }
+
+      h1 {
+        font-size: 28px;
+        color: #333;
+      }
+
+      p {
+        font-size: 16px;
+        line-height: 1.5;
+        color: #666;
+      }
+
+      .author {
+        font-style: italic;
+        color: #888;
+      }
+    </style>
+  </head>
+  <body>
+    <%- include("components/navbar") %>
+    <div class="container">
+      <h1><%- blogSingle[0].title %></h1>
+      <p><%- blogSingle[0].subTitle %></p>
+      <p><%- blogSingle[0].description %></p>
+<p>
+    <%- blogSingle[0].createdAt.toISOString().slice(0,9) %>
+</p>
+     <button>
+      <a href="/delete/<%- blogSingle[0].id %>">Delete</a>
+     </button>
+     <button>
+     
+        <a href="/edit/<%- blogSingle[0].id %>">Edit</a>
+      </button>
+      
+    
+    
+  </body>
+</html>

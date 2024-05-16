@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Perfect Form</title>
+  </head>
+  <body>
+    <!-- Form Container with Inline CSS -->
+
+    <%- include("components/navbar") %>
+
+    <div
+      style="
+        max-width: 400px;
+        margin: 0 auto;
+        padding: 20px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+      "
+    >
+      <!-- Form Title with Inline CSS -->
+      <h2 style="color: #333; font-size: 24px; margin-bottom: 10px">
+        Edit Blog
+      </h2>
+      <!-- Form Subtitle with Inline CSS -->
+      <h3 style="color: #666; font-size: 18px; margin-bottom: 20px">
+        Subtitle
+      </h3>
+      <!-- Form Description with Inline CSS -->
+      <p style="color: #888; font-size: 14px; margin-bottom: 20px">
+        This is a description of the form. You can add more details here.
+      </p>
+
+      <!-- Actual Form with Action Attribute -->
+      <form action="/editBlog/<%- blog[0].id %>" method="post">
+        <!-- Form Label and Input Field for Title with Inline CSS -->
+        <label
+          for="title"
+          style="
+            display: block;
+            color: #333;
+            font-size: 16px;
+            margin-bottom: 5px;
+          "
+        >
+          Title:
+        </label>
+        <input
+          type="text"
+          id="title"
+          name="title"
+          value="<%- blog[0].title %>"
+          style="
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+            font-size: 14px;
+          "
+          required
+        />
+
+        <!-- Form Label and Input Field for Subtitle with Inline CSS -->
+        <label
+          for="subtitle"
+          style="
+            display: block;
+            color: #333;
+            font-size: 16px;
+            margin-bottom: 5px;
+          "
+        >
+          Subtitle:
+        </label>
+        <input
+          type="text"
+          id="subtitle"
+          name="subtitle"
+          value="<%- blog[0].subTitle %>"
+          style="
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+            font-size: 14px;
+          "
+          required
+        />
+
+        <!-- Form Label and Textarea for Description with Inline CSS -->
+        <label
+          for="description"
+          style="
+            display: block;
+            color: #333;
+            font-size: 16px;
+            margin-bottom: 5px;
+          "
+        >
+          Description:
+        </label>
+        <textarea
+          id="description"
+          name="description"
+          rows="4"
+          style="
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+            font-size: 14px;
+          "
+          required
+        >
+    <%- blog[0].description %>
+    </textarea
+        >
+
+        <!-- Submit Button with Inline CSS -->
+        <input
+          type="submit"
+          value="Submit"
+          style="
+            background-color: #333;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 3px;
+            font-size: 16px;
+            cursor: pointer;
+          "
+        />
+      </form>
+    </div>
+  </body>
+</html>
